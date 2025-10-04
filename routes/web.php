@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\BackendController;
 use  App\Http\Controllers\DoctorController;
+use  App\Http\Controllers\PatientController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\DoctorScheduleController;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\PrescriptionController;
+use App\Http\Controllers\PrescriptionMedicineController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +27,13 @@ Route::get('/', function () {
 });
 
 Route::resource('doctor', DoctorController::class);
+Route::resource('patient', PatientController::class);
+Route::resource('service', ServiceController::class);
+Route::resource('doctorSchedule', DoctorScheduleController::class);
+Route::resource('appointment', AppointmentController::class);
+Route::resource('prescription', PrescriptionController::class);
+Route::resource('prescriptionMedicine', PrescriptionMedicineController::class);
+Route::resource('payment', PaymentController::class);
 
 
 Route::get('dashboard',[BackendController::class,'index'])->name('dashboard');

@@ -59,42 +59,48 @@
         </a>
       </li>
 
-      {{-- <li>
-        <a href="{{route('product.index')}}">
-          <i class="zmdi zmdi-format-list-bulleted"></i> <span>Product</span>
+      <li>
+        <a href="{{route('patient.index')}}">
+          <i class="zmdi zmdi-format-list-bulleted"></i> <span>Patient</span>
         </a>
-      </li> --}}
+      </li>
 
-      {{-- <li>
-        <a href="{{route('productTag.index')}}">
-          <i class="zmdi zmdi-grid"></i> <span>Product Tag</span>
+      <li>
+        <a href="{{route('service.index')}}">
+          <i class="zmdi zmdi-grid"></i> <span>Service</span>
         </a>
-      </li> --}}
+      </li>
 
-      {{-- <li>
-        <a href="{{route('tag.index')}}">
-          <i class="zmdi zmdi-calendar-check"></i> <span>Tag</span>
-          <small class="badge float-right badge-light">New</small>
-        </a>
-      </li> --}}
+      <li>
+        <a href="{{route('doctorSchedule.index')}}">
+          <i class="zmdi zmdi-calendar-check"></i> <span>doctorSchedule</span>
 
-      {{-- <li>
-        <a href="{{route('coupon.index')}}">
-          <i class="zmdi zmdi-face"></i> <span>Coupon</span>
         </a>
-      </li> --}}
+      </li>
 
-      {{-- <li>
-        <a href="{{route('order.index')}}">
-          <i class="zmdi zmdi-face"></i> <span>Order</span>
+      <li>
+        <a href="{{route('appointment.index')}}">
+          <i class="zmdi zmdi-face"></i> <span>Appoinment</span>
         </a>
-      </li> --}}
+      </li>
 
-      {{-- <li>
-        <a href="{{route('orderItem.index')}}">
-          <i class="zmdi zmdi-face"></i> <span>Order Item</span>
+      <li>
+        <a href="{{route('prescription.index')}}">
+          <i class="zmdi zmdi-face"></i> <span>Prescription</span>
         </a>
-      </li> --}}
+      </li>
+
+      <li>
+        <a href="{{route('prescriptionMedicine.index')}}">
+          <i class="zmdi zmdi-face"></i> <span>Prescription Medicine Item</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="{{route('payment.index')}}">
+          <i class="zmdi zmdi-face"></i> <span>Payment</span>
+        </a>
+      </li>
 
       <li class="sidebar-header">LABELS</li>
       <li><a href="javaScript:void();"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
