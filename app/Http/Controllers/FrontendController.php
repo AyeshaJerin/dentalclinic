@@ -6,5 +6,9 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    //
+    function doctors() {
+        return view ('doctors');
+    }
+
+
 }

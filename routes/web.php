@@ -11,6 +11,7 @@ use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\PrescriptionMedicineController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\HomeController;
+use  App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,12 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('doctors',[FrontendController::class,'doctors'])->name ('doctors');
+
+
+
 
 Route::resource('doctor', DoctorController::class);
 Route::resource('patient', PatientController::class);
