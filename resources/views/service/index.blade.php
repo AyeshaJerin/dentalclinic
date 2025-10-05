@@ -15,8 +15,8 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
-                    <th scope="col">descripton</th>
-                    <th scope="col">price </th>
+                    <th scope="col">Descripton</th>
+                    <th scope="col">Price </th>
 
 
                     <th scope="col">Action </th>
@@ -30,7 +30,7 @@
                         <td>{{$d->name}}</td>
                         <td>{{$d->descripton}}</td>
                         <td>{{$d->price}}</td>
-                       
+
 
                         <td>
                             <a href="{{route('service.edit',$d->id)}}">Update</a>

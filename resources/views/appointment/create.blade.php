@@ -43,8 +43,14 @@
             <input type="text" name="serial_number" class="form-control form-control-rounded" id="serial_number" >
            </div>
            <div class="form-group">
-            <label for="status">status</label>
-            <input type="text" name="status" class="form-control form-control-rounded" id="status" >
+            <label for="status"> Status</label>
+            <select name="status" id="status" class="form-control form-control-rounded">
+                <option value="">Pending</option>
+                <option value="">Approved</option>
+                <option value="">Rejected</option>
+                <option value="">Completed</option>
+
+            </select>
            </div>
 
            <div class="form-group">

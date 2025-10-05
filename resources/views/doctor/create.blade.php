@@ -43,18 +43,25 @@
             <input type="text" name="experience_years" class="form-control form-control-rounded" id="experience_years" >
            </div>
            <div class="form-group">
-            <label for="gender">gender</label>
-            <input type="text" name="gender" class="form-control form-control-rounded" id="gender" >
+            <label for="gender"> Gender</label>
+            <select name="gender" id="gender" class="form-control form-control-rounded">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
            </div>
            <div class="form-group">
             <label for="address">address</label>
             <input type="text" name="address" class="form-control form-control-rounded" id="address" >
            </div>
-           <div class="form-group">
-            <label for="status">status</label>
-            <input type="text" name="status" class="form-control form-control-rounded" id="status" >
-           </div>
+          <div class="form-group">
+            <label for="status"> Status</label>
+            <select name="status" id="status" class="form-control form-control-rounded">
+                <option value="inactive">Inactive</option>
+                <option value="active">Active</option>
 
+            </select>
+           </div>
            <div class="form-group">
             <button type="submit" class="btn btn-light btn-round px-5"> Save</button>
           </div>

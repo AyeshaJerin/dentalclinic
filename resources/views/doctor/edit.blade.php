@@ -1,7 +1,7 @@
 
 
 
-<form action="{{route('doctor.update',$doctor->id)}}" method="post" class="update-form">
+{{-- <form action="{{route('doctor.update',$doctor->id)}}" method="post" class="update-form">
     @csrf
     @method('PATCH')
     <h2>Update doctor</h2>
@@ -39,23 +39,31 @@
         <input type="text" name="experience_years" id="experience_years" value="{{$doctor->experience_years}}">
     </div>
     <div class="form-group">
-        <label for="gender">gender</label>
-        <input type="text" name="gender" id="gender" value="{{$doctor->gender}}">
-    </div>
+            <label for="gender"> Gender</label>
+            <select name="gender" id="gender" value="{{$doctor->gender}}" class="form-control form-control-rounded">
+                <option value="0">Male</option>
+                <option value="1">Female</option>
+                <option value="2">Other</option>
+            </select>
+        </div>
     <div class="form-group">
         <label for="address">address</label>
         <input type="text" name="address" id="address" value="{{$doctor->address}}">
     </div>
-    <div class="form-group">
-        <label for="status">status</label>
-        <input type="text" name="status" id="status" value="{{$doctor->status}}">
+   <div class="form-group">
+            <label for="status"> Status</label>
+            <select name="status" id="status" value="{{$doctor->status}}" class="form-control form-control-rounded">
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
+
+            </select>
     </div>
 
 
     <button type="submit">Update</button>
-</form>
+</form> --}}
 
-<style>
+{{-- <style>
     body {
         font-family: 'Poppins', sans-serif;
         background: linear-gradient(135deg, #00695c, #0d47a1, #4a148c); /* match form colors */
@@ -134,31 +142,192 @@
     button:hover {
         background: #311b92;
     }
-</style>
+</style> --}}
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Doctor</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #00695c, #0d47a1, #4a148c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+        }
 
+        .update-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            width: 380px;
+            color: #fff;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
 
-{{-- <form action="{{route('category.update',$category->id)}}"  method="post">
+        .update-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 0.4px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #c5cae9;
+            font-size: 12px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 9px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #80cbc4;
+            box-shadow: 0 0 6px rgba(128, 203, 196, 0.5);
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group select option {
+            background: #1a237e;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4a148c;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #311b92;
+        }
+
+        @media (max-width: 480px) {
+            .update-form {
+                width: 90%;
+                padding: 15px 20px;
+            }
+
+            .update-form h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<form action="{{ route('doctor.update', $doctor->id) }}" method="post" class="update-form">
     @csrf
     @method('PATCH')
-    <div>
+    <h2>Update Doctor</h2>
+
+    <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{$category->name}}">
-    </div>
-    <div>
-        <label for="description">Description </label>
-        <input type="text" name="description" id="description" value="{{$category->description}}">
-    </div>
-    <div>
-        <label for="created_by">Created_by</label>
-        <input type="text" name="created_by" id="created_by" value="{{$category->created_by}}">
+        <input type="text" name="name" id="name" value="{{ $doctor->name }}">
     </div>
 
-    <div>
-        <button type="submit">Update</button>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" value="{{ $doctor->email }}">
     </div>
-</form> --}}
+
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="text" name="password" id="password" value="{{ $doctor->password }}">
+    </div>
+
+    <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone" value="{{ $doctor->phone }}">
+    </div>
+
+    <div class="form-group">
+        <label for="specialization">Specialization</label>
+        <input type="text" name="specialization" id="specialization" value="{{ $doctor->specialization }}">
+    </div>
+
+    <div class="form-group">
+        <label for="education">Education</label>
+        <input type="text" name="education" id="education" value="{{ $doctor->education }}">
+    </div>
+
+    <div class="form-group">
+        <label for="experience_years">Experience (Years)</label>
+        <input type="text" name="experience_years" id="experience_years" value="{{ $doctor->experience_years }}">
+    </div>
+
+    <div class="form-group">
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+            <option value="0" {{ $doctor->gender == 0 ? 'selected' : '' }}>Male</option>
+            <option value="1" {{ $doctor->gender == 1 ? 'selected' : '' }}>Female</option>
+            <option value="2" {{ $doctor->gender == 2 ? 'selected' : '' }}>Other</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" name="address" id="address" value="{{ $doctor->address }}">
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select name="status" id="status">
+            <option value="0" {{ $doctor->status == 0 ? 'selected' : '' }}>Inactive</option>
+            <option value="1" {{ $doctor->status == 1 ? 'selected' : '' }}>Active</option>
+        </select>
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
 
 
 

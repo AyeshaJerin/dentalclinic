@@ -26,7 +26,7 @@
             <label for="price">Price </label>
             <input type="text" name="price" class="form-control form-control-rounded" id="price" >
            </div>
-           
+
            <div class="form-group">
             <button type="submit" class="btn btn-light btn-round px-5"> Save</button>
           </div>

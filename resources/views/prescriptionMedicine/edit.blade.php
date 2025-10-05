@@ -7,12 +7,12 @@
     <h2>Update patient</h2>
 
     <div class="form-group">
-        <label for="prescription_id">prescription_id</label>
+        <label for="prescription_id">prescription id</label>
         <input type="text" name="prescription_id" id="prescription_id" value="{{$prescriptionMedicine->prescription_id}}">
     </div>
 
     <div class="form-group">
-        <label for="medicine_name">medicine_name</label>
+        <label for="medicine_name">medicine name</label>
         <input type="text" name="medicine_name" id="medicine_name" value="{{$prescriptionMedicine->medicine_name}}">
     </div>
 

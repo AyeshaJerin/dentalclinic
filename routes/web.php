@@ -10,6 +10,7 @@ use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\PrescriptionMedicineController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,5 +36,10 @@ Route::resource('prescription', PrescriptionController::class);
 Route::resource('prescriptionMedicine', PrescriptionMedicineController::class);
 Route::resource('payment', PaymentController::class);
 
+Auth::routes();
+Route::middleware('auth:web')->group(function () {
 
-Route::get('dashboard',[BackendController::class,'index'])->name('dashboard');
+    Route::get('dashboard',[BackendController::class,'index'])->name('dashboard');
+
+    Route::get('home', [HomeController::class, 'index'])->name('home');
+});

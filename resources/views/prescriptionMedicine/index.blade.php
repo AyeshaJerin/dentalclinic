@@ -14,8 +14,8 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">prescription_id</th>
-                    <th scope="col">medicine_name</th>
+                    <th scope="col">Prescription Id</th>
+                    <th scope="col">medicine name</th>
                     <th scope="col">dosage </th>
                     <th scope="col">frequency</th>
                     <th scope="col">duration</th>

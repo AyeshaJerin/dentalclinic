@@ -15,11 +15,11 @@
            <form action="{{route('prescriptionMedicine.store')}}"  method="post">
             @csrf
            <div class="form-group">
-            <label for="prescription_id">prescription_id</label>
+            <label for="prescription_id">prescription id</label>
             <input type="text"  name="prescription_id"  class="form-control form-control-rounded" id="prescription_id">
            </div>
            <div class="form-group">
-            <label for="medicine_name">medicine_name</label>
+            <label for="medicine_name">medicine name</label>
             <input type="text" name="medicine_name"  class="form-control form-control-rounded" id="medicine_name" >
            </div>
            <div class="form-group">
@@ -31,7 +31,7 @@
             <input type="text" name="frequency" class="form-control form-control-rounded" id="frequency" >
            </div>
 
-          
+
 
            <div class="form-group">
             <label for="duration">duration </label>
