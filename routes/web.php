@@ -11,7 +11,7 @@ use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\PrescriptionMedicineController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\HomeController;
-use  App\Http\Controllers\FrontendController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +28,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('welcome',[FrontendController::class,'welcome'])->name ('welcome');
 Route::get('doctors',[FrontendController::class,'doctors'])->name ('doctors');
+Route::get('application',[FrontendController::class,'application'])->name ('application');
 
 
 

@@ -20,7 +20,7 @@
            </div>
            <div class="form-group">
             <label for="description">Description</label>
-            <input type="text" name="description"  class="form-control form-control-rounded" id="description" >
+            <input type="text" name="description" class="form-control form-control-rounded" id="description" >
            </div>
            <div class="form-group">
             <label for="price">Price </label>
