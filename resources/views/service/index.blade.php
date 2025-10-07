@@ -28,7 +28,7 @@
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{$d->name}}</td>
-                        <td>{{$d->descripton}}</td>
+                        <td>{{$d->description}}</td>
                         <td>{{$d->price}}</td>
 
 
