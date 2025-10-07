@@ -12,8 +12,15 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $data=Patient::get();
-        return view('patient.index',compact('data'));
+      // If phone query param present, return JSON for lookup
+      if(request()->has('phone')){
+         $phone = request()->query('phone');
+         $patient = Patient::where('phone', $phone)->first();
+         return response()->json($patient);
+      }
+
+      $data=Patient::get();
+      return view('patient.index',compact('data'));
     }
 
     /**

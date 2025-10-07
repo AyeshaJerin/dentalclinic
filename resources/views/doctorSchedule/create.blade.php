@@ -15,20 +15,35 @@
            <form action="{{route('doctorSchedule.store')}}"  method="post">
             @csrf
            <div class="form-group">
-            <label for="doctor_id">doctor_id</label>
-            <input type="text"  name="doctor_id"  class="form-control form-control-rounded" id="doctor_id">
+            <label for="doctor_id">doctor</label>
+            <select name="doctor_id"  class="form-control form-control-rounded" id="doctor_id">
+                <option value="">Select Doctor</option>
+                @forelse ($doctors as $doctor)
+                    <option value="{{$doctor->id}}">{{$doctor->name}}</option>
+                @empty
+
+                @endforelse
+            </select>
            </div>
            <div class="form-group">
-            <label for="day_of_week">day_of_week</label>
-            <input type="text" name="day_of_week"  class="form-control form-control-rounded" id="day_of_week" >
+                <label for="day_of_week">day_of_week</label>
+                <select name="day_of_week"  class="form-control form-control-rounded" id="day_of_week" >
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="7">Sunday</option>
+                </select>
            </div>
            <div class="form-group">
             <label for="start_time">start_time </label>
-            <input type="text" name="start_time" class="form-control form-control-rounded" id="start_time" >
+            <input type="time" name="start_time" class="form-control form-control-rounded" id="start_time" >
            </div>
            <div class="form-group">
             <label for="end_time">end_time </label>
-            <input type="text" name="end_time" class="form-control form-control-rounded" id="end_time" >
+            <input type="time" name="end_time" class="form-control form-control-rounded" id="end_time" >
            </div>
 
 

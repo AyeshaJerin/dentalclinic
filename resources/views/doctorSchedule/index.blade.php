@@ -24,12 +24,22 @@
                 </tr>
             </thead>
             <tbody>
+                @php
+                    $days = [
+                        1 => 'Monday',
+                        2 => 'Tuesday',
+                        3 => 'Wednesday',
+                        4 => 'Thursday',
+                        5 => 'Friday',
+                        6 => 'Saturday',
+                        7 => 'Sunday',
+                    ];
+                @endphp
                 @forelse($data as $d)
-
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
-                        <td>{{$d->doctor_id}}</td>
-                        <td>{{$d->day_of_week}}</td>
+                        <td>{{$d->doctor?->name}}</td>
+                        <td>{{$days[$d->day_of_week]}}</td>
                         <td>{{$d->start_time}}</td>
                         <td>{{$d->end_time}}</td>
 

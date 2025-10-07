@@ -31,6 +31,9 @@ Route::get('/', function () {
 Route::get('welcome',[FrontendController::class,'welcome'])->name ('welcome');
 Route::get('doctors',[FrontendController::class,'doctors'])->name ('doctors');
 Route::get('application',[FrontendController::class,'application'])->name ('application');
+Route::post('appointment_store',[FrontendController::class,'appointment_store'])->name ('appointment_store');
+// AJAX route to fetch doctor schedules
+Route::get('doctor/{id}/schedules', [FrontendController::class, 'doctorSchedules'])->name('doctor.schedules');
 
 
 

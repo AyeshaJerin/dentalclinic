@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DoctorSchedule;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class DoctorScheduleController extends Controller
@@ -21,7 +22,8 @@ class DoctorScheduleController extends Controller
      */
     public function create()
     {
-       return view('doctorSchedule.create');
+        $doctors=Doctor::get();
+        return view('doctorSchedule.create',compact('doctors'));
     }
 
     /**

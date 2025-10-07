@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\DoctorSchedule;
 
 class FrontendController extends Controller
 {
@@ -21,5 +22,17 @@ class FrontendController extends Controller
         return view ('application',compact('doctors'));
     }
 
+    public function doctorSchedules($id)
+    {
+        $schedules = DoctorSchedule::where('doctor_id', $id)->get();
+        return response()->json($schedules);
+    }
+
+    public function appointment_store(Request $request){
+
+
+        return $request->all();
+
+    }
 
 }
