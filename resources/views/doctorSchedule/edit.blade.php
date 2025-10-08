@@ -11,20 +11,36 @@
         <input type="text" name="doctor_id" id="doctor_id" value="{{$doctorSchedule->doctor_id}}">
     </div>
 
+
+
+
+
     <div class="form-group">
         <label for="day_of_week">day_of_week</label>
-        <input type="text" name="day_of_week" id="day_of_week" value="{{$doctorSchedule->day_of_week}}">
+        <select name="day_of_week"  class="form-control   form-control-rounded" id="day_of_week" value="{{$doctorSchedule->day_of_week}}" >
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+            <option value="7">Sunday</option>
+        </select>
     </div>
 
     <div class="form-group">
         <label for="start_time">start_time</label>
-        <input type="text" name="start_time" id="start_time" value="{{$doctorSchedule->start_time}}">
+        <input type="time" name="start_time" id="start_time" value="{{$doctorSchedule->start_time}}">
     </div>
+
+
+
+
 
 
     <div class="form-group">
         <label for="end_time">end_time</label>
-        <input type="text" name="end_time" id="end_time" value="{{$doctorSchedule->end_time}}">
+        <input type="time" name="end_time" id="end_time" value="{{$doctorSchedule->end_time}}">
     </div>
 
 
@@ -116,26 +132,7 @@
 
 
 
-{{-- <form action="{{route('category.update',$category->id)}}"  method="post">
-    @csrf
-    @method('PATCH')
-    <div>
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{$category->name}}">
-    </div>
-    <div>
-        <label for="description">Description </label>
-        <input type="text" name="description" id="description" value="{{$category->description}}">
-    </div>
-    <div>
-        <label for="created_by">Created_by</label>
-        <input type="text" name="created_by" id="created_by" value="{{$category->created_by}}">
-    </div>
 
-    <div>
-        <button type="submit">Update</button>
-    </div>
-</form> --}}
 
 
 

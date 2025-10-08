@@ -18,42 +18,42 @@
 
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" value="{{ $doctor->name }}">
+                    <input type="text" name="name" id="name" class="form-control form-control-rounded" value="{{ $doctor->name }}">
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" value="{{ $doctor->email }}">
+                    <input type="text" name="email" id="email" class="form-control form-control-rounded" value="{{ $doctor->email }}">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" name="password" id="password" value="{{ $doctor->password }}">
+                    <input type="text" name="password" id="password" class="form-control form-control-rounded" value="{{ $doctor->password }}">
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="text" name="phone" id="phone" value="{{ $doctor->phone }}">
+                    <input type="text" name="phone" id="phone" class="form-control form-control-rounded" value="{{ $doctor->phone }}">
                 </div>
 
                 <div class="form-group">
                     <label for="specialization">Specialization</label>
-                    <input type="text" name="specialization" id="specialization" value="{{ $doctor->specialization }}">
+                    <input type="text" name="specialization" id="specialization" class="form-control form-control-rounded" value="{{ $doctor->specialization }}">
                 </div>
 
                 <div class="form-group">
                     <label for="education">Education</label>
-                    <input type="text" name="education" id="education" value="{{ $doctor->education }}">
+                    <input type="text" name="education" id="education" class="form-control form-control-rounded" value="{{ $doctor->education }}">
                 </div>
 
                 <div class="form-group">
                     <label for="experience_years">Experience (Years)</label>
-                    <input type="text" name="experience_years" id="experience_years" value="{{ $doctor->experience_years }}">
+                    <input type="text" name="experience_years" id="experience_years" class="form-control form-control-rounded" value="{{ $doctor->experience_years }}">
                 </div>
 
                 <div class="form-group">
                     <label for="gender">Gender</label>
-                    <select name="gender" id="gender">
+                    <select name="gender" id="gender" class="form-control form-control-rounded">
                         <option value="0" {{ $doctor->gender == 0 ? 'selected' : '' }}>Male</option>
                         <option value="1" {{ $doctor->gender == 1 ? 'selected' : '' }}>Female</option>
                         <option value="2" {{ $doctor->gender == 2 ? 'selected' : '' }}>Other</option>
@@ -62,12 +62,12 @@
 
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" name="address" id="address" value="{{ $doctor->address }}">
+                    <input type="text" name="address" id="address" class="form-control form-control-rounded" value="{{ $doctor->address }}">
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status</label>
-                    <select name="status" id="status">
+                    <select name="status" id="status"  class="form-control form-control-rounded">
                         <option value="0" {{ $doctor->status == 0 ? 'selected' : '' }}>Inactive</option>
                         <option value="1" {{ $doctor->status == 1 ? 'selected' : '' }}>Active</option>
                     </select>
