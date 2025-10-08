@@ -29,7 +29,11 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
-       Doctor::create($request->all());
+        $input = $request->all();
+        if($request->password){
+            $input['password'] = bcrypt($request->password);
+        }
+       Doctor::create($input);
        return redirect()->route('doctor.index');
     }
 
@@ -54,7 +58,12 @@ class DoctorController extends Controller
      */
     public function update(Request $request, Doctor $doctor)
     {
-      $doctor->update($request->all());
+        $input = $request->all();
+        if($request->password){
+            $input['password'] = bcrypt($request->password);
+        }
+
+        $doctor->update($input);
        return redirect()->route('doctor.index');
     }
 

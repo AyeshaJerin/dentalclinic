@@ -16,7 +16,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">email</th>
-                    <th scope="col">password </th>
                     <th scope="col">phone</th>
                     <th scope="col">specialization</th>
                     <th scope="col">education</th>
@@ -34,7 +33,6 @@
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{$d->name}}</td>
                         <td>{{$d->email}}</td>
-                        <td>{{$d->password}}</td>
                         <td>{{$d->phone}}</td>
                         <td>{{$d->specialization}}</td>
                         <td>{{$d->education}}</td>

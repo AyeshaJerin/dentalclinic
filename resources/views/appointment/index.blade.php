@@ -14,10 +14,9 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">patient_id</th>
-                    <th scope="col">doctor_id</th>
-                    <th scope="col">service_id </th>
-                    <th scope="col">schedule_id</th>
+                    <th scope="col">patient</th>
+                    <th scope="col">doctor</th>
+                    <th scope="col">schedule</th>
                     <th scope="col">appointment_date</th>
                     <th scope="col">serial_number</th>
                     <th scope="col">status</th>
@@ -31,18 +30,14 @@
 
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
-                        <td>{{$d->patient_id}}</td>
-                        <td>{{$d->doctor_id}}</td>
-                        <td>{{$d->service_id}}</td>
-                        <td>{{$d->schedule_id}}</td>
+                        <td>{{$d->patient?->name}}</td>
+                        <td>{{$d->doctor?->name}}</td>
+                        <td>{{$d->schedule?->day_of_week}}</td>
                         <td>{{$d->appointment_date}}</td>
                         <td>{{$d->serial_number}}</td>
                         <td>{{$d->status}}</td>
-
-
                         <td>
                             <a href="{{route('appointment.edit',$d->id)}}">Update</a>
-
                             <form method="post" action="{{route('appointment.destroy',$d->id)}}">
                                 @csrf
                                 @method('delete')
