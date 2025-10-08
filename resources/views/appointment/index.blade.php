@@ -37,6 +37,8 @@
                         <td>{{$d->serial_number}}</td>
                         <td>{{$d->status}}</td>
                         <td>
+                            <a href="{{route('appointment.prescription',$d->id)}}">Prescription</a>
+
                             <a href="{{route('appointment.edit',$d->id)}}">Update</a>
                             <form method="post" action="{{route('appointment.destroy',$d->id)}}">
                                 @csrf

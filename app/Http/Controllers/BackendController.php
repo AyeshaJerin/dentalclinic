@@ -10,4 +10,7 @@ class BackendController extends Controller
     function index() {
         return view ('backend');
     }
+
+
+
 }
