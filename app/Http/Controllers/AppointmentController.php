@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 
 class AppointmentController extends Controller
@@ -21,7 +22,32 @@ class AppointmentController extends Controller
      */
     public function create()
     {
-        return view('appointment.create');
+        $doctors = Doctor::all();
+        return view('appointment.create', compact('doctors'));
+    }
+
+    /**
+     * Check availability (AJAX) for a given schedule and date.
+     */
+    public function checkAvailability(Request $request)
+    {
+        $request->validate([
+            'schedule_id' => 'required|exists:doctor_schedules,id',
+            'appointment_date' => 'required|date',
+        ]);
+
+        $scheduleId = $request->input('schedule_id');
+        $date = $request->input('appointment_date');
+
+        $count = Appointment::where('schedule_id', $scheduleId)
+            ->where('appointment_date', $date)
+            ->where('status', '!=', 'cancel')
+            ->count();
+
+        return response()->json([
+            'available' => $count === 0,
+            'booked' => $count,
+        ]);
     }
 
     /**
@@ -41,7 +67,7 @@ class AppointmentController extends Controller
 
         if (!$patientId) {
             // If patient id not provided, try phone field or full patient form
-            $phone = $request->input('phone') ?? $request->input('p_phone') ?? null;
+            $phone = $request->input('phone') ?? $request->input('p_phone') ?? $request->input('lookup_phone') ?? null;
             if ($phone) {
                 $patient = \App\Models\Patient::firstOrCreate(
                     ['phone' => $phone],

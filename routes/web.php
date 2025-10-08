@@ -32,6 +32,9 @@ Route::get('welcome',[FrontendController::class,'welcome'])->name ('welcome');
 Route::get('doctors',[FrontendController::class,'doctors'])->name ('doctors');
 Route::get('application',[FrontendController::class,'application'])->name ('application');
 Route::post('appointment_store',[FrontendController::class,'appointment_store'])->name ('appointment_store');
+Route::get('appointment_ticket',[FrontendController::class,'appointment_ticket'])->name ('appointment_ticket');
+// AJAX availability check for admin/create page
+Route::post('appointment/check-availability', [AppointmentController::class, 'checkAvailability'])->name('appointment.check_availability');
 // AJAX route to fetch doctor schedules
 Route::get('doctor/{id}/schedules', [FrontendController::class, 'doctorSchedules'])->name('doctor.schedules');
 

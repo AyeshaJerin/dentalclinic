@@ -1,6 +1,3 @@
-
-
-
 @extends('layouts.master')
 @section('content')
 <section id="team" data-stellar-background-ratio="1">
