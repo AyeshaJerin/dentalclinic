@@ -142,4 +142,12 @@ class AppointmentController extends Controller
       $appointment->delete();
        return redirect()->route('appointment.index');
     }
+
+
+    // prescription
+    public function prescription()
+    {
+      $data=Appointment::get();
+        return view('appointment.prescription',compact('data'));
+    }
 }
