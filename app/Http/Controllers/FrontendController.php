@@ -31,7 +31,8 @@ class FrontendController extends Controller
     public function appointment_store(Request $request){
 
 
-        return $request->all();
+        // return $request->all();
+        return redirect()->route('appointment.index');
 
     }
 
