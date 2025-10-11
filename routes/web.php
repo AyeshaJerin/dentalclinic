@@ -15,6 +15,7 @@ use App\Http\Controllers\FrontendController;
 
 use App\Http\Controllers\Doctor\DoctorAuthController;
 use App\Http\Controllers\Doctor\DoctorAppointmentController;
+use App\Http\Controllers\Doctor\DoctorPrescriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::middleware('auth:doctor')->group(function () {
     Route::resource('doctor_panel/prescription', DoctorAuthController::class);
 
     Route::resource('doctor_panel/appointment', DoctorAppointmentController::class,['as'=>'doctor_panel']);
+Route::resource('doctor_panel/prescription', DoctorPrescriptionController::class,['as'=>'doctor_panel']);
 
 
     // Route::get('home', [HomeController::class, 'index'])->name('home');

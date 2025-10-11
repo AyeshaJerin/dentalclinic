@@ -35,13 +35,13 @@
                         <td>{{$d->serial_number}}</td>
                         <td>{{$d->status}}</td>
                         <td>
-                            {{-- <a href="{{route('appointment.prescription',$d->id)}}">Prescription</a> --}}
+                            <a class="btn btn-success" href="{{route('doctor_panel.prescription.create')}}?patient_id={{$d->patient_id}}&appointment_id={{$d->id}}">Prescription</a>
 
-                            <a href="{{route('doctor_panel.appointment.edit',$d->id)}}">Update</a>
+                            <a class="btn btn-info" href="{{route('doctor_panel.appointment.edit',$d->id)}}">Update</a>
                             <form method="post" action="{{route('doctor_panel.appointment.destroy',$d->id)}}">
                                 @csrf
                                 @method('delete')
-                                <button type="submit">Delete</button>
+                                <button class="btn btn-danger" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

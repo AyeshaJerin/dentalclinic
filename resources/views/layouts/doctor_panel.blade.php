@@ -60,7 +60,7 @@
       </li>
 
       <li>
-        <a href="{{route('prescription.index')}}">
+        <a href="{{route('doctor_panel.prescription.index')}}">
           <i class="zmdi zmdi-face"></i> <span>Prescription</span>
         </a>
       </li>
