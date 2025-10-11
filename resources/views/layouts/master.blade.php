@@ -76,7 +76,7 @@ http://www.tooplate.com/view/2098-health
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>ealth Center</a>
+                    <a href="index.html" class="navbar-brand"><i class="fa fa-h-square"></i>Dental Clinic</a>
                </div>
 
                <!-- MENU LINKS -->
