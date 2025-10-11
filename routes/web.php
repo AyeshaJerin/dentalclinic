@@ -13,6 +13,8 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\FrontendController;
 
+// use App\Http\Controllers\Doctor\DoctorAuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +51,30 @@ Route::resource('appointment', AppointmentController::class);
 Route::resource('prescription', PrescriptionController::class);
 Route::resource('prescriptionMedicine', PrescriptionMedicineController::class);
 Route::resource('payment', PaymentController::class);
+
+
+
+
+
+// Route::get('doctor_panel/login',[DoctorAuthController::class,'login'])->name ('doctor_panel.login');
+// Route::post('doctor_panel/login',[DoctorAuthController::class,'checkLogin'])->name ('doctor_panel.login');
+// Route::get('doctor_panel/logout',[DoctorAuthController::class,'logout'])->name ('doctor_panel.logout');
+
+
+
+// Route::middleware('auth:doctor')->group(function () {
+
+//     Route::get('doctor_panel/dashboard',[DoctorAuthController::class,'dashboard'])->name('doctor_panel.dashboard');
+
+//     Route::resource('doctor_panel/prescription', DoctorAuthController::class);
+
+
+//     // Route::get('home', [HomeController::class, 'index'])->name('home');
+// });
+
+
+
+
 
 Auth::routes();
 Route::middleware('auth:web')->group(function () {
