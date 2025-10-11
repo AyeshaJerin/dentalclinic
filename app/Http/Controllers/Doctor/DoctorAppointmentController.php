@@ -1,35 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Doctor;
 
-use Illuminate\Http\Request;
-use App\Models\DoctorSchedule;
+use App\Http\Controllers\Controller;
 use App\Models\Appointment;
+use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class DoctorAppointmentController extends Controller
 {
-
-    function welcome() {
-        return view ('welcome');
+    function index(){
+        $data=Appointment::where('doctor_id',auth()->guard('doctor')->id())->get();
+        return view('doctor_panel.appointment.index',compact('data'));
     }
 
-    function doctors() {
-        $doctors=\App\Models\Doctor::get();
-        return view ('doctors',compact('doctors'));
+    function create(){
+        return view('doctor_panel.appointment.create');
     }
 
-    function application() {
-        $doctors=\App\Models\Doctor::get();
-        return view ('application',compact('doctors'));
-    }
-
-    public function doctorSchedules($id)
-    {
-        $schedules = DoctorSchedule::where('doctor_id', $id)->get();
-        return response()->json($schedules);
-    }
-
-    public function appointment_store(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
             'doctor_id' => 'required|exists:doctors,id',
@@ -60,17 +48,6 @@ class FrontendController extends Controller
             }
         }
 
-        // Conflict check: prevent double-booking for the same schedule + date
-        $scheduleId = $request->input('schedule_id');
-        $apptDate = $request->input('appointment_date');
-        // $conflict = Appointment::where('schedule_id', $scheduleId)
-        //     ->where('appointment_date', $apptDate)
-        //     ->where('status', '!=', 'cancel')
-        //     ->exists();
-
-        // if ($conflict) {
-        //     return redirect()->back()->with('error', 'Selected slot is already booked for that date. Please choose another date or time.')->withInput();
-        // }
 
         $appointment = Appointment::create([
             'patient_id' => $patientId,
@@ -81,17 +58,7 @@ class FrontendController extends Controller
             'serial_number' => $request->input('serial_number'),
             'status' => 'pending',
         ]);
-        // return $request->all();
-        return redirect()->route('appointment_ticket', ['appointment_id' => $appointment->id]);
 
+        return redirect()->route('doctor_panel.appointment.index')->with('success', 'Appointment created.');
     }
-
-    public function appointment_ticket(Request $request) {
-        $appointment = Appointment::with(['doctor', 'patient', 'schedule'])->find($request->query('appointment_id'));
-        if (!$appointment) {
-            return redirect()->back()->with('error', 'Appointment not found.');
-        }
-        return view('appointment_ticket', compact('appointment'));
-    }
-
 }
