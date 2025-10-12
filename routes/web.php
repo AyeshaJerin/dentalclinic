@@ -64,6 +64,16 @@ Route::get('doctor_panel/logout',[DoctorAuthController::class,'logout'])->name (
 
 
 
+
+
+// Route::delete('/doctor/appointment/{id}', [DoctorAppointmentController::class, 'destroy'])->name('doctor.appointment.destroy');
+
+
+
+
+
+
+
 Route::middleware('auth:doctor')->group(function () {
 
     Route::get('doctor_panel/dashboard',[DoctorAuthController::class,'dashboard'])->name('doctor_panel.dashboard');

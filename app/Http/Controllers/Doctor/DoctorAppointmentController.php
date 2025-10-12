@@ -61,4 +61,22 @@ class DoctorAppointmentController extends Controller
 
         return redirect()->route('doctor_panel.appointment.index')->with('success', 'Appointment created.');
     }
+
+
+    //     public function edit($id)
+    // {
+    //     $appointment = Appointment::findOrFail($id);
+    //     return view('doctor.appointment.edit', compact('appointment'));
+    // }
+
+
+    //     public function destroy($id)
+    // {
+    //     $appointment = Appointment::findOrFail($id);
+    //     $appointment->delete();
+
+    //     return redirect()->route('doctor.appointment.index')->with('success', 'Appointment deleted successfully.');
+    // }
+
+
 }
