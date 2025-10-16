@@ -37,7 +37,8 @@
                         <td>
                             <a class="btn btn-success" href="{{route('doctor_panel.prescription.create')}}?patient_id={{$d->patient_id}}&appointment_id={{$d->id}}">Prescription</a>
 
-                            <a class="btn btn-info" href="{{route('doctor_panel.appointment.edit',$d->id)}}">Update</a>
+                            {{-- <a class="btn btn-info" href="{{route('doctor_panel.appointment.edit',$d->id)}}">Update</a> --}}
+
                             <form method="post" action="{{route('doctor_panel.appointment.destroy',$d->id)}}">
                                 @csrf
                                 @method('delete')

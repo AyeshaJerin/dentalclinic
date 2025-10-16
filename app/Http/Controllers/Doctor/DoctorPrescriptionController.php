@@ -83,6 +83,7 @@ class DoctorPrescriptionController extends Controller
             DB::commit();
             return redirect()->route('doctor_panel.prescription.index')->with('success', 'Prescription saved successfully');
         } catch (\Exception $e) {
+            dd($e);
             DB::rollBack();
             return back()->withInput()->with('error', 'Failed to save prescription: ' . $e->getMessage());
         }
@@ -161,6 +162,7 @@ class DoctorPrescriptionController extends Controller
             return redirect()->route('doctor_panel.prescription.show', $prescription->id)->with('success', 'Prescription updated successfully');
         } catch (\Exception $e) {
             DB::rollBack();
+            dd($e);
             return back()->withInput()->with('error', 'Failed to update prescription: ' . $e->getMessage());
         }
     }

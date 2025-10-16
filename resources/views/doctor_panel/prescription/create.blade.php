@@ -8,12 +8,20 @@
            <div class="card-title">Add Prescription</div>
 
            <hr>
-
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form action="{{ route('doctor_panel.prescription.store') }}"  method="post">
             @csrf
-            <input type="hidden"  name="appointment_id" id="appointment_id" value="{{ old('appointment_id',$request->appointment_id) }}">
-            <input type="hidden"  name="doctor_id" id="doctor_id" value="{{ old('doctor_id',auth()->guard('doctor')->id()) }}">
-            <input type="hidden"  name="patient_id" id="patient_id" value="{{ old('patient_id',$request->patient_id) }}">
+            <input type="text"  name="appointment_id" id="appointment_id" value="{{ old('appointment_id',$request->appointment_id) }}">
+            <input type="text"  name="doctor_id" id="doctor_id" value="{{ old('doctor_id',auth()->guard('doctor')->id()) }}">
+            <input type="text"  name="patient_id" id="patient_id" value="{{ old('patient_id',$request->patient_id) }}">
 
             <h5>Patient Information</h5>
             <div class="form-row">

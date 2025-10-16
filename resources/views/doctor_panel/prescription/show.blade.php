@@ -101,7 +101,7 @@
         .card { box-shadow: none !important; }
     }
     /* small adjustments for screen */
-    #prescription-print-area { background: #fff; padding: 15px; }
+    #prescription-print-area { background: #4a95d2; padding: 15px; }
 </style>
 @endpush
 

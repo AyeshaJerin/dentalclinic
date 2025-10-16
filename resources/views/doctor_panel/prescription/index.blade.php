@@ -27,7 +27,7 @@
                         <td>{{$d->inv}}</td>
                         <td>{{$d->diagnosis}}</td>
                         <td>
-                            <a href="{{route('doctor_panel.prescription.show',$d->id)}}">Show</a>
+                            <a href="{{route('doctor_panel.prescription.show',$d->id)}}">Show</a><br>
                             <a href="{{route('doctor_panel.prescription.edit',$d->id)}}">Update</a>
 
                             <form method="post" action="{{route('doctor_panel.prescription.destroy',$d->id)}}">
