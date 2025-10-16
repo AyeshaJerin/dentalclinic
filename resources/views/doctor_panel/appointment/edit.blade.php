@@ -1,5 +1,5 @@
 
-<form action="{{ route('appointment.update', $appointment->id) }}" method="post" class="update-form">
+<form action="{{ route('doctor_panel.appointment.update', $appointment->id) }}" method="post" class="update-form">
     @csrf
     @method('PATCH')
     <h2>Update Appointment</h2>

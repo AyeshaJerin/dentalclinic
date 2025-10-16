@@ -1,4 +1,4 @@
-@extends('layouts.back')
+@extends('layouts.doctor_panel')
 @section('page_title', 'Prescription')
 
 @section('content')
